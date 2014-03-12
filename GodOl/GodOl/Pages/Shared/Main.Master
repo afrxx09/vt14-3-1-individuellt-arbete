@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="GodOl.Pages.Shared.Main" %>
+
+<%@ Register Src="~/Pages/Shared/UC/Navigation.ascx" TagPrefix="uc1" TagName="Navigation" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>God Öl - <asp:ContentPlaceHolder ID="cphHeadTitle" runat="server" /></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrap">
+            <div id="header">
+                <h1>God Öl</h1>
+                <div id="nav">
+                    <uc1:Navigation runat="server" id="Navigation" />
+                </div>
+            </div>
+            <div id="content">
+                <asp:ContentPlaceHolder ID="cph1" runat="server" />
+            </div>
+            <div id="footer">
+            </div>
+        </div>
+    </form>
+</body>
+</html>

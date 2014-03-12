@@ -85,7 +85,7 @@ namespace GodOl.Model.DAL
                             var iBeerType = r.GetOrdinal("BeerType");
                             return new BeerType
                             {
-                                BeerTypeId = r.GetInt32(iBeerType),
+                                BeerTypeId = r.GetInt32(iBeerTypeId),
                                 BType = r.GetString(iBeerType)
                             };
                         }

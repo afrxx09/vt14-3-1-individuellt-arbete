@@ -57,6 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\BeerList.aspx" />
+    <Content Include="Pages\BreweryList.aspx" />
     <Content Include="Pages\Shared\UC\Navigation.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -69,6 +71,20 @@
     <Compile Include="Model\DAL\BeerTypeDAL.cs" />
     <Compile Include="Model\DAL\BreweryDAL.cs" />
     <Compile Include="Model\Service.cs" />
+    <Compile Include="Pages\BeerList.aspx.cs">
+      <DependentUpon>BeerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BeerList.aspx.designer.cs">
+      <DependentUpon>BeerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BreweryList.aspx.cs">
+      <DependentUpon>BreweryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BreweryList.aspx.designer.cs">
+      <DependentUpon>BreweryList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Shared\Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -97,8 +113,6 @@
   <ItemGroup>
     <Folder Include="App\Data\" />
     <Folder Include="App\Start\" />
-    <Folder Include="Pages\Beer\" />
-    <Folder Include="Pages\Brewery\" />
     <Folder Include="Scripts\" />
     <Folder Include="Styles\" />
   </ItemGroup>

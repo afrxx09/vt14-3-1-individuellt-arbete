@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace GodOl.Pages
+namespace GodOl.Pages.BeerPages
 {
     public partial class BeerList : System.Web.UI.Page
     {
@@ -39,10 +39,16 @@ namespace GodOl.Pages
         {
             var beer = (Beer)e.Item.DataItem;
             var s = new Service();
+
             var beerType = s.GetBeerTypeById(beer.BeerTypeId);
-            var bType = beerType.BType;
+            var brewery = s.GetBreweryById(beer.BeweryId);
+
             var lblBeerType = e.Item.FindControl("lblBeerType") as Label;
-            lblBeerType.Text = bType;
+            var hlBrewery = e.Item.FindControl("hlBrewery") as HyperLink;
+
+            lblBeerType.Text = beerType.BType;
+            hlBrewery.Text = brewery.Name;
+            hlBrewery.NavigateUrl = GetRouteUrl("BreweryDetails", new { id = brewery.BreweryId });
         }
 
 

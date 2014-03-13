@@ -82,7 +82,7 @@ namespace GodOl.Model.DAL
                 try
                 {
                     //Skapar Command-objekt för att exekvera Lagrade procedurer och ställa in parametrar till dessa
-                    var cmd = new SqlCommand("Brewery.GetBreweryById", con);
+                    var cmd = new SqlCommand("Brewery.GetBrewery", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@BreweryId", SqlDbType.Int, 4).Value = breweryId;
                     con.Open();

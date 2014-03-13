@@ -57,12 +57,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Pages\BeerList.aspx" />
-    <Content Include="Pages\BreweryList.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Pages\BeerPages\BeerList.aspx" />
+    <Content Include="Pages\BeerPages\Delete.aspx" />
+    <Content Include="Pages\BeerPages\Edit.aspx" />
+    <Content Include="Pages\BreweryPages\BreweryList.aspx" />
     <Content Include="Pages\Shared\UC\Navigation.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\Generic\PageExtension.cs" />
+    <Compile Include="App\Start\RouteConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Model\Beer.cs" />
     <Compile Include="Model\BeerType.cs" />
     <Compile Include="Model\Brewery.cs" />
@@ -71,18 +79,32 @@
     <Compile Include="Model\DAL\BeerTypeDAL.cs" />
     <Compile Include="Model\DAL\BreweryDAL.cs" />
     <Compile Include="Model\Service.cs" />
-    <Compile Include="Pages\BeerList.aspx.cs">
+    <Compile Include="Pages\BeerPages\BeerList.aspx.cs">
       <DependentUpon>BeerList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\BeerList.aspx.designer.cs">
+    <Compile Include="Pages\BeerPages\BeerList.aspx.designer.cs">
       <DependentUpon>BeerList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\BreweryList.aspx.cs">
+    <Compile Include="Pages\BeerPages\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BeerPages\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BeerPages\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BeerPages\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BreweryPages\BreweryList.aspx.cs">
       <DependentUpon>BreweryList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\BreweryList.aspx.designer.cs">
+    <Compile Include="Pages\BreweryPages\BreweryList.aspx.designer.cs">
       <DependentUpon>BreweryList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Shared\Main.Master.cs">
@@ -111,8 +133,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\Data\" />
-    <Folder Include="App\Start\" />
     <Folder Include="Scripts\" />
     <Folder Include="Styles\" />
   </ItemGroup>

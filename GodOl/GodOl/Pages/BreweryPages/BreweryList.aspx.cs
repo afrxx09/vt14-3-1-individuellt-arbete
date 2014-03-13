@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace GodOl.Pages
+namespace GodOl.Pages.BreweryPages
 {
     public partial class BreweryList : System.Web.UI.Page
     {

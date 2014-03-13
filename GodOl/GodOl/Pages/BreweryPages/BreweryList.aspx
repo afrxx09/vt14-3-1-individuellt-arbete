@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Shared/Main.Master" AutoEventWireup="true" CodeBehind="BreweryList.aspx.cs" Inherits="GodOl.Pages.BreweryList" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Shared/Main.Master" AutoEventWireup="true" CodeBehind="BreweryList.aspx.cs" Inherits="GodOl.Pages.BreweryPages.BreweryList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHeadTitle" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph1" runat="server">
@@ -10,7 +10,9 @@
         </LayoutTemplate>
         <ItemTemplate>
             <div class="list-row">
-                <div class="list-col"><%# Item.Name %></div>
+                <div class="list-col">
+                    <asp:HyperLink ID="hlBreweryDetails" runat="server" NavigateUrl='<%# GetRouteUrl("BreweryDetails", new { id = Item.BreweryId })  %>'><%# Item.Name %></asp:HyperLink>
+                </div>
                 <div class="list-col"><%# Item.Nationality %></div>
                 <div class="list-col"><%# Item.City %></div>
             </div>

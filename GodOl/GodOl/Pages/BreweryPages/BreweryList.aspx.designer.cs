@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GodOl.Pages {
+namespace GodOl.Pages.BreweryPages {
     
     
-    public partial class BeerList {
+    public partial class BreweryList {
         
         /// <summary>
-        /// ListView1 control.
+        /// lwBreweries control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView1;
+        protected global::System.Web.UI.WebControls.ListView lwBreweries;
     }
 }

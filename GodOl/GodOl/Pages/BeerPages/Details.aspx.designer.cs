@@ -10,24 +10,15 @@
 namespace GodOl.Pages.BeerPages {
     
     
-    public partial class Edit {
+    public partial class Details {
         
         /// <summary>
-        /// litBeerName control.
+        /// fwBeerDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litBeerName;
-        
-        /// <summary>
-        /// FormView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView1;
+        protected global::System.Web.UI.WebControls.FormView fwBeerDetails;
     }
 }

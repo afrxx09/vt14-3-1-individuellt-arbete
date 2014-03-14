@@ -1,0 +1,33 @@
+﻿body * {
+    margin:0;
+    padding:0;
+}
+
+/**/
+.list-row {
+    float:left;
+    width:100%;
+}
+
+.list-col {
+    float:left;
+    padding:2px 4px;
+}
+
+/**/
+#wrap {
+    width:900px;
+    margin:0 auto;
+}
+
+#header {
+    padding:10px;
+}
+
+#content {
+    padding:10px;
+}
+
+#footer {
+    padding:10px;
+}

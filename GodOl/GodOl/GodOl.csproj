@@ -60,9 +60,13 @@
     <Content Include="Global.asax" />
     <Content Include="Pages\BeerPages\BeerList.aspx" />
     <Content Include="Pages\BeerPages\Delete.aspx" />
+    <Content Include="Pages\BeerPages\Details.aspx" />
     <Content Include="Pages\BeerPages\Edit.aspx" />
+    <Content Include="Pages\BeerPages\Insert.aspx" />
     <Content Include="Pages\BreweryPages\BreweryList.aspx" />
     <Content Include="Pages\Shared\UC\Navigation.ascx" />
+    <Content Include="Pages\Shared\UC\ucBeer.ascx" />
+    <Content Include="Styles\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -93,12 +97,26 @@
     <Compile Include="Pages\BeerPages\Delete.aspx.designer.cs">
       <DependentUpon>Delete.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\BeerPages\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BeerPages\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BeerPages\Edit.aspx.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\BeerPages\Edit.aspx.designer.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BeerPages\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BeerPages\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\BreweryPages\BreweryList.aspx.cs">
       <DependentUpon>BreweryList.aspx</DependentUpon>
@@ -121,6 +139,13 @@
     <Compile Include="Pages\Shared\UC\Navigation.ascx.designer.cs">
       <DependentUpon>Navigation.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Shared\UC\ucBeer.ascx.cs">
+      <DependentUpon>ucBeer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Shared\UC\ucBeer.ascx.designer.cs">
+      <DependentUpon>ucBeer.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -134,7 +159,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\" />
-    <Folder Include="Styles\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GodOl.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,32 @@ namespace GodOl.Pages.BeerPages
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void fwInsertBeer_InsertItem(Beer beer)
+        {
+            
+            if (Page.ModelState.IsValid)
+            {
+                try
+                {
+                    var s = new Service();
+                    s.SaveBeer(beer);
+
+                    Page.SetTempData("SuccessMessage", "Öl har skapats.");
+                    Response.RedirectToRoute("BeerDetails", new { id = beer.BeerId });
+                    Context.ApplicationInstance.CompleteRequest();
+                }
+                catch (Exception)
+                {
+                    Page.ModelState.AddModelError(String.Empty, "Gick inte skriva till databasen.");
+                }
+            }
+        }
+
+        public IEnumerable<BeerType> selBeerType_GetData()
+        {
+            return null;
         }
     }
 }

@@ -8,7 +8,7 @@
             <div>
                 <p>Namn: <%# Item.Name %></p>
                 <p>
-                    Typ: <asp:Label ID="lblBeerType" runat="server" Text="Label"></asp:Label>
+                    Typ: <asp:Label ID="lblBeerType" runat="server" />
                 </p>
                 <p>
                     Bryggeri: <asp:HyperLink ID="hlBrewery" runat="server" />

@@ -14,7 +14,7 @@ namespace GodOl.Model
         public int BeerTypeId { get; set; }
 
         [Required(ErrorMessage = "BryggeriId krävs.")]
-        public int BeweryId { get; set; }
+        public int BreweryId { get; set; }
 
         [Required(ErrorMessage = "Namn krävs.")]
         [StringLength(30, ErrorMessage="Max 30 tecken i namnet.")]

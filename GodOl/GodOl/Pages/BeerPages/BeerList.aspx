@@ -19,9 +19,6 @@
                 <div class="list-col">
                     <asp:Label ID="lblBeerType" runat="server" />
                 </div>
-                <div class="list-col"><%# Item.ABV %></div>
-                <div class="list-col"><%# Item.IBU %></div>
-                <div class="list-col"><%# Item.EBC %></div>
                 <div class="list-col">
                     <asp:HyperLink ID="hlBrewery" runat="server" />
                 </div>

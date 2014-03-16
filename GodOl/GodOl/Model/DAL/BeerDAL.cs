@@ -46,7 +46,7 @@ namespace GodOl.Model.DAL
                             beers.Add(new Beer{
                                 BeerId = r.GetInt32(iBeerId),
                                 BeerTypeId = r.GetInt32(iBeerType),
-                                BeweryId = r.GetInt32(iBreweryId),
+                                BreweryId = r.GetInt32(iBreweryId),
                                 Name = r.GetString(iName),
                                 StartYear = r.GetString(iStartYear),
                                 ABV = (double)r.GetDecimal(iABV),
@@ -102,7 +102,7 @@ namespace GodOl.Model.DAL
                             {
                                 BeerId = r.GetInt32(iBeerId),
                                 BeerTypeId = r.GetInt32(iBeerType),
-                                BeweryId = r.GetInt32(iBreweryId),
+                                BreweryId = r.GetInt32(iBreweryId),
                                 Name = r.GetString(iName),
                                 StartYear = r.GetString(iStartYear),
                                 ABV = (double)r.GetDecimal(iABV),
@@ -161,7 +161,7 @@ namespace GodOl.Model.DAL
                             {
                                 BeerId = r.GetInt32(iBeerId),
                                 BeerTypeId = r.GetInt32(iBeerType),
-                                BeweryId = r.GetInt32(iBreweryId),
+                                BreweryId = r.GetInt32(iBreweryId),
                                 Name = r.GetString(iName),
                                 StartYear = r.GetString(iStartYear),
                                 ABV = (double)r.GetDecimal(iABV),
@@ -192,7 +192,7 @@ namespace GodOl.Model.DAL
                 {
                     var cmd = new SqlCommand("Beer.InsertBeer", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@BeweryId", SqlDbType.Int, 4).Value = beer.BeweryId;
+                    cmd.Parameters.Add("@BreweryId", SqlDbType.Int, 4).Value = beer.BreweryId;
                     cmd.Parameters.Add("@BeerTypeId", SqlDbType.Int, 4).Value = beer.BeerTypeId;
                     cmd.Parameters.Add("@Name", SqlDbType.VarChar, 30).Value = beer.Name;
                     cmd.Parameters.Add("@StartYear", SqlDbType.VarChar, 4).Value = beer.StartYear;
@@ -223,13 +223,13 @@ namespace GodOl.Model.DAL
                     var cmd = new SqlCommand("Beer.UpdateBeer", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@BeerId", SqlDbType.Int, 4).Value = beer.BeerId;
-                    cmd.Parameters.Add("@BeweryId", SqlDbType.Int, 4).Value = beer.BeweryId;
+                    cmd.Parameters.Add("@BreweryId", SqlDbType.Int, 4).Value = beer.BreweryId;
                     cmd.Parameters.Add("@BeerTypeId", SqlDbType.Int, 4).Value = beer.BeerTypeId;
                     cmd.Parameters.Add("@Name", SqlDbType.VarChar, 30).Value = beer.Name;
                     cmd.Parameters.Add("@StartYear", SqlDbType.VarChar, 4).Value = beer.StartYear;
                     cmd.Parameters.Add("@ABV", SqlDbType.Decimal, 5).Value = beer.ABV;
-                    cmd.Parameters.Add("@IBU", SqlDbType.TinyInt, 1).Value = beer.IBU;
-                    cmd.Parameters.Add("@EBC", SqlDbType.TinyInt, 1).Value = beer.EBC;
+                    cmd.Parameters.Add("@IBU", SqlDbType.TinyInt, 2).Value = beer.IBU;
+                    cmd.Parameters.Add("@EBC", SqlDbType.TinyInt, 2).Value = beer.EBC;
                     con.Open();
 
                     cmd.ExecuteNonQuery();

@@ -34,19 +34,48 @@ namespace GodOl.Pages.BeerPages
         }
 
         // The id parameter name should match the DataKeyNames value set on the control
-        public void FormView1_UpdateItem(int beerId)
+        public void FormView1_UpdateItem(int BeerId)
         {
             var s = new Service();
-            Beer beer = s.GetBeerById(beerId);
+            Beer beer = s.GetBeerById(BeerId);
             if (beer == null)
             {
-                ModelState.AddModelError(String.Empty, String.Format("Öl med id{0} kunde inte hittas", beerId));
+                ModelState.AddModelError(String.Empty, String.Format("Öl med id{0} kunde inte hittas", BeerId));
                 return;
             }
             TryUpdateModel(beer);
             if (ModelState.IsValid)
             {
                 s.SaveBeer(beer);  
+            }
+        }
+
+        public IEnumerable<BeerType> selBeerType_GetData()
+        {
+            try
+            {
+                var s = new Service();
+                return s.GetBeerTypes();
+            }
+            catch (Exception)
+            {
+                Page.ModelState.AddModelError(String.Empty, "Databasfel vid läsning av data.");
+                return null;
+            }
+        }
+
+
+        public IEnumerable<Brewery> selBrewery_GetData()
+        {
+            try
+            {
+                var s = new Service();
+                return s.GetBreweries();
+            }
+            catch (Exception)
+            {
+                Page.ModelState.AddModelError(String.Empty, "Databasfel vid läsning av data.");
+                return null;
             }
         }
     }

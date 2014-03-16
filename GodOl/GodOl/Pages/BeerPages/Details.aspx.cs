@@ -36,7 +36,7 @@ namespace GodOl.Pages.BeerPages
             var beer = (Beer)fwBeerDetails.DataItem;
             var s = new Service();
 
-            var brewery = s.GetBreweryById(beer.BeweryId);
+            var brewery = s.GetBreweryById(beer.BreweryId);
             var beerType = s.GetBeerTypeById(beer.BeerTypeId);
 
             var lblBeerType = fwBeerDetails.FindControl("lblBeerType") as Label;

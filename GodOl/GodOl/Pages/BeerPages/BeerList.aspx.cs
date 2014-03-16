@@ -41,7 +41,7 @@ namespace GodOl.Pages.BeerPages
             var s = new Service();
 
             var beerType = s.GetBeerTypeById(beer.BeerTypeId);
-            var brewery = s.GetBreweryById(beer.BeweryId);
+            var brewery = s.GetBreweryById(beer.BreweryId);
 
             var lblBeerType = e.Item.FindControl("lblBeerType") as Label;
             var hlBrewery = e.Item.FindControl("hlBrewery") as HyperLink;

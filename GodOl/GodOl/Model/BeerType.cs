@@ -10,7 +10,7 @@ namespace GodOl.Model
     {
         public int BeerTypeId { get; set; }
 
-        //Fail... can't name the property "BeerType"(Field name in Database)
+        //Fail... can't name the property "BeerType"(same as Field name in Database)
         [Required(ErrorMessage="BeerType krävs.")]
         [StringLength(25, ErrorMessage="Max 25 tecken.")]
         public string BType { get; set; }

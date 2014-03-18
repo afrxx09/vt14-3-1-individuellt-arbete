@@ -74,6 +74,7 @@
     <Content Include="Pages\Error.aspx" />
     <Content Include="Pages\Shared\UC\Navigation.ascx" />
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\afrxx09.pubxml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />

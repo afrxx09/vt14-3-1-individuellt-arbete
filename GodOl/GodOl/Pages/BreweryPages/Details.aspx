@@ -8,69 +8,89 @@
     </asp:Panel>
     <asp:FormView ID="fwBreweryDetails" runat="server" RenderOuterTable="false" DefaultMode="ReadOnly" ItemType="GodOl.Model.Brewery" DataKeyNames="BreweryId" SelectMethod="fwBreweryDetails_GetItem">
         <ItemTemplate>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Namn
+            <div class="brewery-details">
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Namn
+                    </div>
+                    <div class="details-value details-col">
+                        <%# Item.Name %>
+                    </div>
                 </div>
-                <div class="details-value details-col">
-                    <%# Item.Name %>
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Address
+                    </div>
+                    <div class="details-value details-col">
+                        <%# Item.Adress %>
+                    </div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Address2
+                    </div>
+                    <div class="details-value details-col">
+                        <%# Item.Adress2 %>
+                    </div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Stat / Provins
+                    </div>
+                    <div class="details-value details-col">
+                        <%# Item.State %>
+                    </div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Postnummer
+                    </div>
+                    <div class="details-value details-col">
+                        <%# Item.Zip %>
+                    </div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Stad
+                    </div>
+                    <div class="details-value details-col">
+                        <%# Item.City %>
+                    </div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Nationalitet
+                    </div>
+                    <div class="details-value details-col">
+                        <%# Item.Nationality %>
+                    </div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Etableningsår
+                    </div>
+                    <div class="details-value details-col">
+                        <%# Item.Established%>
+                    </div>
                 </div>
             </div>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Address
-                </div>
-                <div class="details-value details-col">
-                    <%# Item.Adress %>
-                </div>
-            </div>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Address2
-                </div>
-                <div class="details-value details-col">
-                    <%# Item.Adress2 %>
-                </div>
-            </div>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Stat / Provins
-                </div>
-                <div class="details-value details-col">
-                    <%# Item.State %>
-                </div>
-            </div>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Postnummer
-                </div>
-                <div class="details-value details-col">
-                    <%# Item.Zip %>
-                </div>
-            </div>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Stad
-                </div>
-                <div class="details-value details-col">
-                    <%# Item.City %>
-                </div>
-            </div>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Nationalitet
-                </div>
-                <div class="details-value details-col">
-                    <%# Item.Nationality %>
-                </div>
-            </div>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Etableningsår
-                </div>
-                <div class="details-value details-col">
-                    <%# Item.Established%>
-                </div>
+            
+            <div class="brewery-beer-list">
+                <asp:ListView ID="lwBreweryBerList" runat="server" SelectMethod="lwBreweryBerList_GetData" DataKeyNames="BeerId" ItemType="GodOl.Model.Beer">
+                    <LayoutTemplate>
+                        <div>
+                            <h3>Öl-lista</h3>
+                        </div>
+                        <ul>
+                            <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
+                        </ul>
+                    </LayoutTemplate>
+                    <ItemTemplate>
+                        <li>
+                            <asp:HyperLink runat="server" NavigateUrl='<%# GetRouteUrl("BeerDetails", new { id = Item.BeerId })  %>'><%# Item.Name %></asp:HyperLink>
+                        </li>
+                    </ItemTemplate>
+                </asp:ListView>
             </div>
             <div class="clear"></div>
             <div class="form-button-container">

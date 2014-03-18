@@ -16,8 +16,11 @@ namespace GodOl.Pages.BreweryPages
 
         }
 
-        // The id parameter should match the DataKeyNames value set on the control
-        // or be decorated with a value provider attribute, e.g. [QueryString]int id
+        /// <summary>
+        /// Hämtar ut bryggeriet med hjälp av id från url:en till formview-controllern
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Brewery fwUpdateBrewery_GetItem([RouteData]int id)
         {
             try
@@ -32,7 +35,10 @@ namespace GodOl.Pages.BreweryPages
             }
         }
 
-        // The id parameter name should match the DataKeyNames value set on the control
+        /// <summary>
+        /// Uppdaterar bryggeriet
+        /// </summary>
+        /// <param name="breweryId"></param>
         public void fwUpdateBrewery_UpdateItem(int breweryId)
         {
             var s = new Service();

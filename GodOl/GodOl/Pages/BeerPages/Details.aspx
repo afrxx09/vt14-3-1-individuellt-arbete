@@ -8,60 +8,62 @@
     </asp:Panel>
     <asp:FormView ID="fwBeerDetails" RenderOuterTable="false" DefaultMode="ReadOnly" runat="server" ItemType="GodOl.Model.Beer" DataKeyNames="BeerId" SelectMethod="fwBeerDetails_GetItem" OnDataBound="fwBeerDetails_DataBound">
         <ItemTemplate>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Namn
+            <div class="beer-details">
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Namn
+                    </div>
+                    <div class="details-value details-col">
+                        <%# Item.Name %>
+                    </div>
                 </div>
-                <div class="details-value details-col">
-                    <%# Item.Name %>
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Typ
+                    </div>
+                    <div class="details-value details-col">
+                        <asp:Label ID="lblBeerType" runat="server" />
+                    </div>
                 </div>
-            </div>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Typ
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Bryggeri
+                    </div>
+                    <div class="details-value details-col">
+                        <asp:HyperLink ID="hlBrewery" runat="server" />
+                    </div>
                 </div>
-                <div class="details-value details-col">
-                    <asp:Label ID="lblBeerType" runat="server" />
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Produktionsstart
+                    </div>
+                    <div class="details-value details-col">
+                        <%# Item.StartYear %>
+                    </div>
                 </div>
-            </div>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Bryggeri
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Alkohol(ABV)
+                    </div>
+                    <div class="details-value details-col">
+                        <%# Item.ABV %>
+                    </div>
                 </div>
-                <div class="details-value details-col">
-                    <asp:HyperLink ID="hlBrewery" runat="server" />
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Bitterhet(IBU)
+                    </div>
+                    <div class="details-value details-col">
+                        <%# Item.IBU %>
+                    </div>
                 </div>
-            </div>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Produktionsstart
-                </div>
-                <div class="details-value details-col">
-                    <%# Item.StartYear %>
-                </div>
-            </div>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Alkohol(ABV)
-                </div>
-                <div class="details-value details-col">
-                    <%# Item.ABV %>
-                </div>
-            </div>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Bitterhet(IBU)
-                </div>
-                <div class="details-value details-col">
-                    <%# Item.IBU %>
-                </div>
-            </div>
-            <div class="details-row">
-                <div class="details-label details-col">
-                    Färg(EBC)
-                </div>
-                <div class="details-value details-col">
-                    <%# Item.EBC %>
+                <div class="details-row">
+                    <div class="details-label details-col">
+                        Färg(EBC)
+                    </div>
+                    <div class="details-value details-col">
+                        <%# Item.EBC %>
+                    </div>
                 </div>
             </div>
             <div class="clear"></div>

@@ -16,9 +16,11 @@ namespace GodOl.Pages.BeerPages
 
         }
 
-
-        // The id parameter should match the DataKeyNames value set on the control
-        // or be decorated with a value provider attribute, e.g. [QueryString]int id
+        /// <summary>
+        /// Hämtar beer-objekt frånd databasen till form-view:n
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Beer FormView1_GetItem([RouteData]int id)
         {
             try
@@ -33,7 +35,10 @@ namespace GodOl.Pages.BeerPages
             }
         }
 
-        // The id parameter name should match the DataKeyNames value set on the control
+        /// <summary>
+        /// Sparar förändringar på en öl, kontrollerar först att den finns i databasen sen uppdatera beer-objektet enligt formview:n innan den sparas.
+        /// </summary>
+        /// <param name="BeerId"></param>
         public void FormView1_UpdateItem(int BeerId)
         {
             var s = new Service();
@@ -53,6 +58,10 @@ namespace GodOl.Pages.BeerPages
             }
         }
 
+        /// <summary>
+        /// Hämtar alla beertypes till drop-down-listan
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<BeerType> selBeerType_GetData()
         {
             try
@@ -67,7 +76,10 @@ namespace GodOl.Pages.BeerPages
             }
         }
 
-
+        /// <summary>
+        /// Hämtar alla bryggerier till drop-down-listan
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Brewery> selBrewery_GetData()
         {
             try

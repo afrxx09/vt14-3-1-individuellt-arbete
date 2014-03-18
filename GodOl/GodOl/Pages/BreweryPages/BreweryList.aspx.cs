@@ -16,6 +16,10 @@ namespace GodOl.Pages.BreweryPages
             pnlSuccess.Visible = !String.IsNullOrWhiteSpace(lblSuccess.Text);
         }
         
+        /// <summary>
+        /// Hämtar bryggerier till listview-controlern
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Brewery> lwBreweries_GetData()
         {
             try

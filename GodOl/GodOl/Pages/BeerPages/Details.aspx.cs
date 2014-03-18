@@ -17,7 +17,11 @@ namespace GodOl.Pages.BeerPages
             pnlSuccess.Visible = !String.IsNullOrWhiteSpace(lblSuccess.Text);
         }
 
-
+        /// <summary>
+        /// Laddar ett ölobjekt för databasen till listview:n.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Beer-objekt</returns>
         public Beer fwBeerDetails_GetItem([RouteData]int id)
         {
             try
@@ -32,6 +36,11 @@ namespace GodOl.Pages.BeerPages
             }
         }
 
+        /// <summary>
+        /// Hämtar bryggeiet och öltypen baserat på deras id:n från Beer-objektet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void fwBeerDetails_DataBound(object sender, EventArgs e)
         {
             var beer = (Beer)fwBeerDetails.DataItem;

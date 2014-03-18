@@ -21,6 +21,11 @@ namespace GodOl.Pages.BeerPages
             get { return int.Parse(RouteData.Values["id"].ToString()); }
         }
 
+        /// <summary>
+        /// Länkar avbryt-knappen til rätt öl och sätter in namnet på ölen i konfirmations-texten.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             hlCancelDelete.NavigateUrl = GetRouteUrl("BeerDetails", new { id = Id });
@@ -49,6 +54,11 @@ namespace GodOl.Pages.BeerPages
             }
         }
 
+        /// <summary>
+        /// Borttagningen av ölen har konfirmerats, ölen tas bort.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void lbConfirmDelete_Command(object sender, CommandEventArgs e)
         {
             try

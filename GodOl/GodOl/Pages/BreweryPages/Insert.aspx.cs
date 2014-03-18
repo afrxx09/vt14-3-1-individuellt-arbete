@@ -14,6 +14,11 @@ namespace GodOl.Pages.BreweryPages
         {
 
         }
+
+        /// <summary>
+        /// Sparar nytt bryggeri
+        /// </summary>
+        /// <param name="brewery"></param>
         public void fwInsertBrewery_InsertItem(Brewery brewery)
         {
 

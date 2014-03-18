@@ -15,6 +15,10 @@ namespace GodOl.Pages.BeerPages
 
         }
 
+        /// <summary>
+        /// Sparar ny öl i databasen.
+        /// </summary>
+        /// <param name="beer"></param>
         public void fwInsertBeer_InsertItem(Beer beer)
         {
             
@@ -36,6 +40,10 @@ namespace GodOl.Pages.BeerPages
             }
         }
 
+        /// <summary>
+        /// Hämtar öl-typer till dropdown-listan
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<BeerType> selBeerType_GetData()
         {
             try
@@ -50,7 +58,10 @@ namespace GodOl.Pages.BeerPages
             }
         }
 
-
+        /// <summary>
+        /// Hämtar bryggerier till dropdown-listan
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Brewery> selBrewery_GetData()
         {
             try

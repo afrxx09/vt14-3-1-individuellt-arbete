@@ -15,6 +15,11 @@ namespace GodOl.Pages.BreweryPages
             get { return int.Parse(RouteData.Values["id"].ToString()); }
         }
 
+        /// <summary>
+        /// Sätter avbryt-knappens url till rätt bryggeri och ändrar namnet i varningstexten
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             hlCancelDelete.NavigateUrl = GetRouteUrl("BreweryDetails", new { id = Id });
@@ -43,6 +48,12 @@ namespace GodOl.Pages.BreweryPages
 
             }
         }
+
+        /// <summary>
+        /// Borttagningen av bryggeriet har konfirmerats av användaren, service-klassen tar bort det.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void lbConfirmDelete_Command(object sender, CommandEventArgs e)
         {
             try

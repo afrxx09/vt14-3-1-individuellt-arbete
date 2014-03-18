@@ -235,6 +235,29 @@ a {
 }
 
 /*Detail view*/
+.brewery-details {
+    float:left;
+    width:50%;
+    margin-right:10px;
+}
+
+.brewery-beer-list {
+    float:left;
+    width:40%;
+}
+    .brewery-beer-list ul {
+        list-style:none;
+    }
+
+    .brewery-beer-list ul li {
+        padding:4px 6px;
+    }
+
+.beer-details {
+    float:left;
+    width:100%;
+}
+
 .details-row {
     float:left;
     width:100%;
@@ -249,9 +272,9 @@ a {
     padding:4px 6px;
 }
 .details-label {
-    width:200px;
+    width:40%;
     font-weight:bold;
 }
 .details-value {
-    width:200px;
+    width:40%;
 }

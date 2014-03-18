@@ -3,7 +3,7 @@
 Obs! Något gick fel.
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph1" runat="server">
-    <h1>Oväntat serverfel</h1>
+    <h2>Oväntat serverfel</h2>
     <p>
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/">Tillbaka</asp:HyperLink>
     </p>

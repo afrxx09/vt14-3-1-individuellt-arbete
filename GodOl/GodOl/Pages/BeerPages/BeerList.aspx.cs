@@ -12,15 +12,10 @@ namespace GodOl.Pages.BeerPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblSuccess.Text = Page.GetTempData("SuccessMessage") as String;
+            pnlSuccess.Visible = !String.IsNullOrWhiteSpace(lblSuccess.Text);
         }
 
-        // The return type can be changed to IEnumerable, however to support
-        // paging and sorting, the following parameters must be added:
-        //     int maximumRows
-        //     int startRowIndex
-        //     out int totalRowCount
-        //     string sortByExpression
         public IEnumerable<Beer> ListView1_GetData()
         {
             try

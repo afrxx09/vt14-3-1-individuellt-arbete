@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Web.UI;
 
 namespace GodOl
 {
@@ -14,7 +15,13 @@ namespace GodOl
         protected void Application_Start(object sender, EventArgs e)
         {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            
+            var jQuery = new ScriptResourceDefinition {
+                Path = "~/Scripts/jquery-2.1.0.min.js",
+                DebugPath = "~/Scripts/jquery-2.1.0.js",
+                CdnPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-2.1.0.min.js",
+                CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-2.1.0.js"
+            };
+            ScriptManager.ScriptResourceMapping.AddDefinition("jQuery", jQuery);
         }
 
         protected void Session_Start(object sender, EventArgs e)

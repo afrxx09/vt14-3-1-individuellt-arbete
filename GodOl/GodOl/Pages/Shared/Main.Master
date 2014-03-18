@@ -7,18 +7,28 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>God Öl - <asp:ContentPlaceHolder ID="cphHeadTitle" runat="server" /></title>
+    <title>God Öl -
+        <asp:ContentPlaceHolder ID="cphHeadTitle" runat="server" />
+    </title>
     <link href="~/Styles/style.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="jQuery" />
+            </Scripts>
+        </asp:ScriptManager>
         <div id="wrap">
             <div id="header">
                 <h1>God Öl</h1>
-                <div id="nav">
-                    <uc1:Navigation runat="server" id="Navigation" />
-                </div>
+
             </div>
+            <div id="nav">
+                <uc1:Navigation runat="server" ID="Navigation" />
+                <div class="clear"></div>
+            </div>
+            
             <div id="content">
                 <asp:ContentPlaceHolder ID="cph1" runat="server" />
             </div>

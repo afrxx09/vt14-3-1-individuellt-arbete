@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.2.1.0\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -64,8 +67,16 @@
     <Content Include="Pages\BeerPages\Edit.aspx" />
     <Content Include="Pages\BeerPages\Insert.aspx" />
     <Content Include="Pages\BreweryPages\BreweryList.aspx" />
+    <Content Include="Pages\BreweryPages\Delete.aspx" />
+    <Content Include="Pages\BreweryPages\Details.aspx" />
+    <Content Include="Pages\BreweryPages\Edit.aspx" />
+    <Content Include="Pages\BreweryPages\Insert.aspx" />
+    <Content Include="Pages\Error.aspx" />
     <Content Include="Pages\Shared\UC\Navigation.ascx" />
-    <Content Include="Pages\Shared\UC\ucBeer.ascx" />
+    <Content Include="packages.config" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
     <Content Include="Styles\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -125,6 +136,41 @@
     <Compile Include="Pages\BreweryPages\BreweryList.aspx.designer.cs">
       <DependentUpon>BreweryList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\BreweryPages\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BreweryPages\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BreweryPages\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BreweryPages\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BreweryPages\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BreweryPages\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BreweryPages\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BreweryPages\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Shared\Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -139,17 +185,11 @@
     <Compile Include="Pages\Shared\UC\Navigation.ascx.designer.cs">
       <DependentUpon>Navigation.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Shared\UC\ucBeer.ascx.cs">
-      <DependentUpon>ucBeer.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Shared\UC\ucBeer.ascx.designer.cs">
-      <DependentUpon>ucBeer.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pages\Shared\Main.Master" />
+    <Content Include="Scripts\jquery-2.1.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -157,9 +197,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

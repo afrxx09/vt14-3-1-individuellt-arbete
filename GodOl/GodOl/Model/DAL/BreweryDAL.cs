@@ -127,7 +127,7 @@ namespace GodOl.Model.DAL
             {
                 try
                 {
-                    var cmd = new SqlCommand("Beer.InsertBrewery", con);
+                    var cmd = new SqlCommand("Brewery.InsertBrewery", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@Name", SqlDbType.VarChar, 30).Value = brewery.Name;
                     cmd.Parameters.Add("@Adress", SqlDbType.VarChar, 30).Value = brewery.Adress;
@@ -137,10 +137,14 @@ namespace GodOl.Model.DAL
                     cmd.Parameters.Add("@Zip", SqlDbType.VarChar, 30).Value = brewery.Zip;
                     cmd.Parameters.Add("@Nationality", SqlDbType.VarChar, 30).Value = brewery.Nationality;
                     cmd.Parameters.Add("@Established", SqlDbType.VarChar, 4).Value = brewery.Established;
-                   
-                    con.Open();
 
+                    //Output parameter för breweryID så brewery-objektet kan uppdateras efter att det skapats i databasen.
+                    cmd.Parameters.Add("@BreweryId", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
+                    
+                    con.Open();
                     cmd.ExecuteNonQuery();
+
+                    brewery.BreweryId = (int)cmd.Parameters["@BreweryId"].Value;
                 }
                 catch
                 {
@@ -159,9 +163,9 @@ namespace GodOl.Model.DAL
             {
                 try
                 {
-                    var cmd = new SqlCommand("Beer.UpdateBrewery", con);
+                    var cmd = new SqlCommand("Brewery.UpdateBrewery", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@BeweryId", SqlDbType.Int, 4).Value = brewery.BreweryId;
+                    cmd.Parameters.Add("@BreweryId", SqlDbType.Int, 4).Value = brewery.BreweryId;
                     cmd.Parameters.Add("@Name", SqlDbType.VarChar, 30).Value = brewery.Name;
                     cmd.Parameters.Add("@Adress", SqlDbType.VarChar, 30).Value = brewery.Adress;
                     cmd.Parameters.Add("@Adress2", SqlDbType.VarChar, 30).Value = brewery.Adress2;
@@ -172,7 +176,6 @@ namespace GodOl.Model.DAL
                     cmd.Parameters.Add("@Established", SqlDbType.VarChar, 4).Value = brewery.Established;
                     
                     con.Open();
-
                     cmd.ExecuteNonQuery();
                 }
                 catch
@@ -192,7 +195,7 @@ namespace GodOl.Model.DAL
             {
                 try
                 {
-                    var cmd = new SqlCommand("Beer.DeleteBrewery", con);
+                    var cmd = new SqlCommand("Brewery.DeleteBrewery", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@BreweryId", SqlDbType.Int, 4).Value = breweryId;
                     con.Open();

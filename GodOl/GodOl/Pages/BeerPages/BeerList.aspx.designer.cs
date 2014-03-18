@@ -7,11 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GodOl.Pages.BeerPages
-{
+namespace GodOl.Pages.BeerPages {
     
     
     public partial class BeerList {
+        
+        /// <summary>
+        /// pnlSuccess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlSuccess;
+        
+        /// <summary>
+        /// lblSuccess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSuccess;
         
         /// <summary>
         /// ListView1 control.

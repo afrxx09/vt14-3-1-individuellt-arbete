@@ -6,16 +6,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace GodOl.Pages.BeerPages
+namespace GodOl.Pages.BreweryPages
 {
     public partial class Delete : System.Web.UI.Page
     {
-        private Service _service;
-        private Service Service
-        {
-            get { return _service ?? (_service = new Service()); }
-        }
-
         protected int Id
         {
             get { return int.Parse(RouteData.Values["id"].ToString()); }
@@ -23,20 +17,21 @@ namespace GodOl.Pages.BeerPages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            hlCancelDelete.NavigateUrl = GetRouteUrl("BeerDetails", new { id = Id });
+            hlCancelDelete.NavigateUrl = GetRouteUrl("BreweryDetails", new { id = Id });
             if (!IsPostBack)
             {
                 try
                 {
-                    var beer = Service.GetBeerById(Id);
-                    if (beer != null)
+                    var s = new Service();
+                    var brewery = s.GetBreweryById(Id);
+                    if (brewery != null)
                     {
-                        lblBeerName.Text = beer.Name;
+                        lblBreweryName.Text = brewery.Name;
                         return;
                     }
                     else
                     {
-                        ModelState.AddModelError(String.Empty, String.Format("Ölet med id: {0} existerar inte.", Id));
+                        ModelState.AddModelError(String.Empty, String.Format("Bryggeriet med id: {0} existerar inte.", Id));
                     }
                 }
                 catch
@@ -48,15 +43,15 @@ namespace GodOl.Pages.BeerPages
 
             }
         }
-
         protected void lbConfirmDelete_Command(object sender, CommandEventArgs e)
         {
             try
             {
-                Service.DeleteBeer(Id);
+                var s = new Service();
+                s.DeleteBrewery(Id);
 
-                Page.SetTempData("SuccessMessage", "Ölen togs bort.");
-                Response.RedirectToRoute("BeerList", null);
+                Page.SetTempData("SuccessMessage", "Bryggeriet togs bort.");
+                Response.RedirectToRoute("BreweryList", null);
                 Context.ApplicationInstance.CompleteRequest();
             }
             catch (Exception)
@@ -65,4 +60,5 @@ namespace GodOl.Pages.BeerPages
             }
         }
     }
+
 }

@@ -3,29 +3,30 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.ModelBinding;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace GodOl.Pages.BreweryPages
 {
-    public partial class BreweryList : System.Web.UI.Page
+    public partial class Details : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             lblSuccess.Text = Page.GetTempData("SuccessMessage") as String;
             pnlSuccess.Visible = !String.IsNullOrWhiteSpace(lblSuccess.Text);
         }
-        
-        public IEnumerable<Brewery> lwBreweries_GetData()
+
+        public Brewery fwBreweryDetails_GetItem([RouteData]int id)
         {
             try
             {
                 var s = new Service();
-                return s.GetBreweries();
+                return s.GetBreweryById(id);
             }
-            catch
+            catch (Exception)
             {
-                ModelState.AddModelError(String.Empty, "Fel inträffade, kunde inte hämta bryggerier");
+                Page.ModelState.AddModelError(String.Empty, "Databasfel vid läsning av data.");
                 return null;
             }
         }

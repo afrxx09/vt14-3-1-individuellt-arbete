@@ -38,7 +38,31 @@ namespace GodOl.Pages.BeerPages
 
         public IEnumerable<BeerType> selBeerType_GetData()
         {
-            return null;
+            try
+            {
+                var s = new Service();
+                return s.GetBeerTypes();
+            }
+            catch (Exception)
+            {
+                Page.ModelState.AddModelError(String.Empty, "Databasfel vid läsning av data.");
+                return null;
+            }
+        }
+
+
+        public IEnumerable<Brewery> selBrewery_GetData()
+        {
+            try
+            {
+                var s = new Service();
+                return s.GetBreweries();
+            }
+            catch (Exception)
+            {
+                Page.ModelState.AddModelError(String.Empty, "Databasfel vid läsning av data.");
+                return null;
+            }
         }
     }
 }

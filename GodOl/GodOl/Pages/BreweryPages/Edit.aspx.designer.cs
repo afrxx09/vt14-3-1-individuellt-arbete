@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GodOl.Pages.BeerPages {
+namespace GodOl.Pages.BreweryPages {
     
     
-    public partial class Insert {
+    public partial class Edit {
         
         /// <summary>
         /// ValidationSummary1 control.
@@ -22,12 +22,12 @@ namespace GodOl.Pages.BeerPages {
         protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
-        /// fwInsertBeer control.
+        /// fwUpdateBrewery control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView fwInsertBeer;
+        protected global::System.Web.UI.WebControls.FormView fwUpdateBrewery;
     }
 }

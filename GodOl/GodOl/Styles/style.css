@@ -2,21 +2,89 @@
     margin:0;
     padding:0;
 }
+html, body {
+    font-family:sans-serif;
+    font-size:14px;
+}
 
-/**/
+a {
+    color:#e87100;
+    text-decoration:none;
+}
+
+/*General*/
+.clear {
+    clear:both;
+}
 .list-row {
     float:left;
     width:100%;
+    background-color:#eee;
 }
+    div.list-row:hover {
+        background-color:#f6f6f6;
+    }
+
+    .list-row:nth-child(2n+1) {
+        background-color:#e6e6e6;
+    }
 
 .list-col {
     float:left;
-    padding:2px 4px;
+    padding:4px 6px;
+    font-size:14px;
 }
 
-/**/
+    .list-col a {
+        text-decoration:none;
+        color:#e87100;
+    }
+    .list-col a:hover {
+        text-decoration:underline;
+    }
+
+.success-panel {
+    padding:10px 20px;
+    border:1px solid #0f0;
+    background-color:#cfc;
+    margin-bottom:10px;
+}
+.success-message {
+    font-size:16px;
+    color:#060;
+    font-weight:bold;
+}
+
+.error-messages {
+    padding:10px 20px;
+    border:1px solid #f00;
+    background-color:#fcc;
+    margin-bottom:10px;
+}
+
+.error-messages ul{
+    list-style:none;
+}
+
+.error-messages ul li{
+    padding:4px 6px;
+    color:#300;
+    font-weight:bold;
+}
+
+.warning-message {
+    padding:10px 20px;
+    border:1px solid #dfe800;
+    background-color:#fffc80;
+    margin-bottom:10px;
+}
+    .warning-message p {
+        font-weight:bold;
+        color:#000;
+    }
+/*layout*/
 #wrap {
-    width:900px;
+    width:600px;
     margin:0 auto;
 }
 
@@ -30,4 +98,160 @@
 
 #footer {
     padding:10px;
+}
+
+/*Navigation*/
+#nav {
+    margin:0 10px;
+    background-color:#e87100;
+}
+    #nav ul {
+        width:100%;
+        list-style-type:none;
+    }
+        #nav ul li {
+            float:left;
+        }
+
+            #nav ul li a:link,
+            #nav ul li a:visited,
+            #nav ul li a:active {
+                display:block;
+                padding:8px 16px;
+                text-decoration:none;
+                color:#000;
+            }
+
+            #nav ul li a:hover {
+                /*background-color:#a55b00;*/
+                color:#fff;
+                text-decoration:underline;
+            }
+
+/*BeerList*/
+.beerlist .list-col.name {
+    width:200px;
+}
+
+.beerlist .list-col.beertype {
+    width:140px;
+}
+
+.beerlist .list-col.brewery {
+    width:200px;
+}
+
+/*BreweryList*/
+.brewerylist .list-col.name {
+    width:200px;
+}
+
+.brewerylist .list-col.nationality {
+    width:100px;
+}
+
+.brewerylist .list-col.city {
+    width:200px;
+}
+
+/*Forms (insert and edit)*/
+.form-row {
+    float:left;
+    width:100%;
+    margin-bottom:6px;
+}
+.form-label {
+    float:left;
+    width:200px;
+    text-align:right;
+    padding:4px 6px;
+}
+    .form-label label {
+        font-weight:bold;
+        font-size:14px;
+    }
+    .form-label span.required {
+        font-weight:bold;
+        color:#f00;
+    }
+
+.form-input {
+    float:left;
+    padding:4px 6px;
+}
+    .form-input input,
+    .form-input select,
+    .form-input textarea {
+        width:200px;
+        padding:4px 6px;
+        background-color:#f6f6f6;
+        border:1px solid #c6c6c6;
+        font-size:14px;
+        outline:none;
+    }
+
+    .form-input select {
+        width:212px;
+    }
+
+    .form-input select option {
+        padding:2px 4px;
+    }
+
+    .form-input input:focus,
+    .form-input select:focus,
+    .form-input textarea:focus {
+        background-color:#fcffbd;
+        border:1px solid #e87100;
+    }
+
+/*Form-buttons*/
+.form-button-container {
+    margin-top:10px;
+    padding:0 25px;
+}
+.form-button {
+    display:block;
+    float:right;
+    padding:10px 25px;
+    font-size:14px;
+    font-weight:bold;
+    color:#fff;
+    outline:none;
+    border:none;
+    margin-right:10px;
+}
+.form-submit {
+    background-color:#060;
+}
+.form-submit:hover {
+    background-color:#393;
+}
+.form-cancel {
+    background-color:#600;
+}
+.form-cancel:hover {
+    background-color:#933;
+}
+
+/*Detail view*/
+.details-row {
+    float:left;
+    width:100%;
+    background-color:#eee;
+}
+    .details-row:nth-child(2n+1) {
+        background-color:#e6e6e6;
+    }
+
+.details-col {
+    float:left;
+    padding:4px 6px;
+}
+.details-label {
+    width:200px;
+    font-weight:bold;
+}
+.details-value {
+    width:200px;
 }

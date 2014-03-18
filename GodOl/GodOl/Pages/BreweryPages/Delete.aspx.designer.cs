@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GodOl.Pages.Shared.UC {
+namespace GodOl.Pages.BreweryPages {
     
     
-    public partial class ucBeer {
+    public partial class Delete {
         
         /// <summary>
         /// ValidationSummary1 control.
@@ -22,21 +22,39 @@ namespace GodOl.Pages.Shared.UC {
         protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
-        /// fwBeer control.
+        /// phConfirmMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView fwBeer;
+        protected global::System.Web.UI.WebControls.PlaceHolder phConfirmMessage;
         
         /// <summary>
-        /// lwBeerUserControl control.
+        /// lblBreweryName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lwBeerUserControl;
+        protected global::System.Web.UI.WebControls.Label lblBreweryName;
+        
+        /// <summary>
+        /// lbConfirmDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbConfirmDelete;
+        
+        /// <summary>
+        /// hlCancelDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlCancelDelete;
     }
 }

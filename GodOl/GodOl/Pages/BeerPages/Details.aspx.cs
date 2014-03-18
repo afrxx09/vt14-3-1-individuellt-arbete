@@ -13,7 +13,8 @@ namespace GodOl.Pages.BeerPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblSuccess.Text = Page.GetTempData("SuccessMessage") as String;
+            pnlSuccess.Visible = !String.IsNullOrWhiteSpace(lblSuccess.Text);
         }
 
 

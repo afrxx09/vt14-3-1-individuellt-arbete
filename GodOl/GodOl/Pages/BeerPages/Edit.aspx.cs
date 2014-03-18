@@ -46,7 +46,10 @@ namespace GodOl.Pages.BeerPages
             TryUpdateModel(beer);
             if (ModelState.IsValid)
             {
-                s.SaveBeer(beer);  
+                s.SaveBeer(beer);
+                Page.SetTempData("SuccessMessage", "Ölen har sparats.");
+                Response.RedirectToRoute("BeerDetails", new { id = beer.BeerId });
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 

@@ -199,9 +199,15 @@ namespace GodOl.Model.DAL
                     cmd.Parameters.Add("@ABV", SqlDbType.Decimal, 5).Value = beer.ABV;
                     cmd.Parameters.Add("@IBU", SqlDbType.TinyInt, 1).Value = beer.IBU;
                     cmd.Parameters.Add("@EBC", SqlDbType.TinyInt, 1).Value = beer.EBC;
-                    con.Open();
 
+                    //En output-parameter med nya ölens id så att objektet i applikationen kan uppdateras.
+                    cmd.Parameters.Add("@BeerId", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
+
+                    con.Open();
                     cmd.ExecuteNonQuery();
+
+                    //Sätt det nya id:t på objektet
+                    beer.BeerId = (int)cmd.Parameters["@BeerId"].Value;
                 }
                 catch
                 {

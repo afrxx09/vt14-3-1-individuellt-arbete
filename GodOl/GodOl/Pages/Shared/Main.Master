@@ -14,11 +14,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
-            <Scripts>
-                <asp:ScriptReference Name="jQuery" />
-            </Scripts>
-        </asp:ScriptManager>
+        
         <div id="wrap">
             <div id="header">
                 <h1>God Öl</h1>

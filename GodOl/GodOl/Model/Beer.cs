@@ -10,10 +10,8 @@ namespace GodOl.Model
     {
         public int BeerId { get; set; }
 
-        [Required(ErrorMessage="Öltyp krävs.")]
         public int BeerTypeId { get; set; }
 
-        [Required(ErrorMessage = "BryggeriId krävs.")]
         public int BreweryId { get; set; }
 
         [Required(ErrorMessage = "Namn krävs.")]

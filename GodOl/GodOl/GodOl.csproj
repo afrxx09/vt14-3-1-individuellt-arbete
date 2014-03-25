@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App\Generic\PageExtension.cs" />
+    <Compile Include="App\Generic\ValidationExtension.cs" />
     <Compile Include="App\Start\RouteConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

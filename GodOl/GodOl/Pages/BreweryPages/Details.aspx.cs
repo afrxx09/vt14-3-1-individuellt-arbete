@@ -48,7 +48,14 @@ namespace GodOl.Pages.BreweryPages
             try
             {
                 var s = new Service();
-                return s.GetBeersByBreweryId(BreweryId);
+                var breweryBeers = s.GetBeersByBreweryId(BreweryId);
+                var beerCount = breweryBeers.Count<Beer>();
+                if (beerCount > 0)
+                {
+                    var hlDeleteButton = fwBreweryDetails.FindControl("hlDeleteBrewery") as HyperLink;
+                    hlDeleteButton.Visible = false;
+                }
+                return breweryBeers;
             }
             catch
             {

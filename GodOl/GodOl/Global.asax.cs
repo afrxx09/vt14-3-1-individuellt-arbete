@@ -15,6 +15,7 @@ namespace GodOl
         protected void Application_Start(object sender, EventArgs e)
         {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
             var jQuery = new ScriptResourceDefinition {
                 Path = "~/Scripts/jquery-2.1.0.min.js",
                 DebugPath = "~/Scripts/jquery-2.1.0.js",

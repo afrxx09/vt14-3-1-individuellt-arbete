@@ -1,6 +1,7 @@
 ﻿using GodOl.Model.DAL;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -40,6 +41,13 @@ namespace GodOl.Model
         /// <param name="beer">Beer-objektet som ska sparas alternativt skapas</param>
         public void SaveBeer(Beer beer)
         {
+            ICollection<ValidationResult> validationResults;
+            if (!beer.Validate(out validationResults))
+            {
+                var ve = new ValidationException("Objektet klarade inte valideringen.");
+                ve.Data.Add("ValidationResults", validationResults);
+                throw ve;
+            }
             if (beer.BeerId == 0)
             {
                 BeerDAL.InsertBeer(beer);
@@ -136,6 +144,13 @@ namespace GodOl.Model
         /// <param name="brewery">Brewery-objekt som ska sparas i databasen</param>
         public void SaveBrewery(Brewery brewery)
         {
+            ICollection<ValidationResult> validationResults;
+            if (!brewery.Validate(out validationResults))
+            {
+                var ve = new ValidationException("Objektet klarade inte valideringen.");
+                ve.Data.Add("ValidationResults", validationResults);
+                throw ve;
+            }
             if (brewery.BreweryId == 0)
             {
                 BreweryDAL.InsertBrewery(brewery);

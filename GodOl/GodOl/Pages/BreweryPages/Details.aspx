@@ -95,7 +95,7 @@
             <div class="clear"></div>
             <div class="form-button-container">
                 <asp:HyperLink ID="HyperLink1" CssClass="form-button form-submit"  runat="server" NavigateUrl='<%# GetRouteUrl("BreweryEdit", new { id = Item.BreweryId })  %>'>Redigera</asp:HyperLink>
-                <asp:HyperLink ID="HyperLink2" CssClass="form-button form-cancel"  runat="server" NavigateUrl='<%# GetRouteUrl("BreweryDelete", new { id = Item.BreweryId })  %>'>Ta bort</asp:HyperLink>
+                <asp:HyperLink ID="hlDeleteBrewery" CssClass="form-button form-cancel"  runat="server" NavigateUrl='<%# GetRouteUrl("BreweryDelete", new { id = Item.BreweryId })  %>'>Ta bort</asp:HyperLink>
             </div>
             
         </ItemTemplate>
